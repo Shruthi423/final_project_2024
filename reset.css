@@ -1,0 +1,78 @@
+/* Reset CSS */
+
+/* Remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default font styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Remove list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+/* Reset images, videos, and other media */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reset table styles */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset button and input elements */
+button, input, select, textarea {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+/* Remove default focus outlines */
+:focus {
+    outline: none;
+}
+
+/* Reset flex containers */
+div {
+    box-sizing: border-box;
+}
+
+/* Add reset for root font size */
+html {
+    font-size: 100%; /* Use percentage for flexible scaling */
+    line-height: 1.15;
+}
+
+body {
+    line-height: 1.5;
+    text-size-adjust: 100%;
+}
+
+/* Reset for media queries */
+@media only screen and (min-width: 768px) {
+    /* Override default browser media query styles if any */
+}

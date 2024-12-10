@@ -1,0 +1,446 @@
+/* Home-Page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "tomarik-introvert", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+    background-color: #E8BD0F;
+    color: #010101;
+}
+
+/* Header */
+header {
+    position: relative;
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-family: "chaloops", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.logo {
+    width: 60px; /* Adjusted for mobile */
+    height: 60px; /* Adjusted for mobile */
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px; /* Adjusted for mobile */
+    color: #000;
+    margin: 0;
+    flex: 1; /* Allow the title to take available space */
+    text-align: center; /* Center the title on mobile */
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the navigation links on mobile */
+}
+
+nav a {
+    margin: 5px; /* Adjusted for mobile */
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+nav a.active {
+    color: #008B9A; /* Active link color */
+}
+
+/* Hero Section */
+.hero {
+    padding: 20px;
+    text-align: center;
+    background-color: #E86322;
+    width: auto; /* Full width for mobile */
+    overflow: hidden;
+}
+.hero h2 {
+    font-family: "chaloops", sans-serif; /* Change font for h2 elements */
+    font-size: 40px;
+    font-weight: 700;
+    font-style: normal;
+    color: #E9E6DF;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-family: "tomarik-introvert", sans-serif; /* Change font for p elements */
+    font-size: 18px;
+    color:#E9E6DF;
+}
+/* Intro Section */
+.movies h3 {
+    text-align: left;
+    font-family: "chaloops", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 20px;
+    font-size: 28px;
+    color: #333;
+}
+.movies {
+    text-align: left;
+    padding: 20px;
+    justify-content: left;
+    gap: 20px; 
+    font-family: "tomarik-introvert", sans-serif; /* Change font for p elements */
+}
+/* Scroll Container */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+    background-color: transparent;
+}
+
+.scroll-container img {
+    height: 150px; /* Adjust height for mobile */
+    margin-right: 10px; /* Space between images */
+    object-fit: cover;
+}
+
+/* Vec2 Image */
+.vec2-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.vec2-image img {
+    width: 50%; /* Full width for mobile */
+    max-width: 300px; /* Max width for larger screens */
+    height: auto;
+}
+
+/* Movies-page */
+/* Movie Cards */
+/* Main Section */
+main {
+    padding: 0px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+main h1 {
+    font-family: "chaloops", sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 40px;
+    color: #333;
+}
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column for mobile */
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin:  0 auto; /* Center the grid */
+}
+/* Movie Cards */
+.movie-card {
+    background-color: #FF954D;
+    border: 5px solid #ddd;
+    border-radius: 15px;
+    height: 500px;
+    width: 100%;
+    max-width: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+/* Front Face */
+.card-front {
+    background-color: #fff;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px); /* Initial blur effect */
+    transition: filter 0.3s;
+}
+
+/* Back Face */
+
+.card-back h3{
+    color :#333;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+.card-back p{
+    color :#333;
+    margin-bottom: 15px;
+    font-family: "tomarik-introvert", sans-serif;
+}
+
+/* Hover and flip Effects */
+.movie-card:hover .card-front img {
+    filter: blur(0); /* Remove blur on hover */
+}
+
+
+
+/* NEW CODE */
+/* Card Inner Container */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Add this for the flipped state */
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Card faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Back Face */
+.card-back {
+    background-color: #f8f8f8;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Responsive Design */
+/* @media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 350px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .movie-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .movie-card {
+        height: 400px;
+    }
+} */
+
+/* About-Page */
+/* About Section */
+.about-section {
+    background-color: #00E3FE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-text {
+    flex: 2;
+    padding: 20px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-family: "chaloops", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 40px;
+    color: #333;
+}
+
+.about-text p {
+    font-family: "tomarik-introvert", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #010101;
+    line-height: 1.8;
+}
+
+/* Bing Bong Image */
+.bingbong_image {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.bingbong_image img {
+    width: 100%; /* Full width for mobile */
+    max-width: 300px; /* Max width for larger screens */
+    height: auto;
+}
+
+/* Cloud Image */
+.cloud_image {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    padding: 0;
+    z-index: 1;
+    width: 15%; /* Full width for mobile */
+    /* max-width: 270px; */
+    height: auto;
+
+}
+
+
+/* Up Image */
+.up-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    background-color: #00E3FE;
+}
+
+.up-image img {
+    width: 100%; /* Full width for mobile */
+    max-width: 270px; /* Max width for larger screens */
+    height: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center; 
+    padding: 10px;
+    background-color: #D0B6F5;
+    color: #000;
+    width: auto; /* Full width for mobile */
+    margin: 0 auto; /* Center the footer */
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    font-family: "tomarik-introvert", sans-serif;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* error page */
+.scrat-image {
+    width: 100%; /* Full width for mobile */;
+    max-width: 500px;
+    height: auto;
+    top: 20px;
+    right: 0;
+}
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.error-container h1 {
+    font-size: 48px;
+    font-family: "chaloops", sans-serif;
+    color: #333;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.error-container h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.error-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+.error-container a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}  
+
+/* Media Queries for Larger Screens */
+@media only screen and (min-width: 600px) {
+    main{
+        padding: 0px;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 36px;
+        text-align: left; /* Align left on larger screens */
+    }
+
+    nav a {
+        margin-left: 15px;
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for larger screens */
+        width: fit-content;
+    }
+
+    .movie-card {
+        width: 350px; /* Adjust width for larger screens */
+    }
+
+    .scroll-container img {
+        height: 200px; /* Adjust height for larger screens */
+    }
+
+    .bingbong_image img,
+    .cloud_image img,
+    .up-image img {
+        max-width: 400px; /* Adjust max width for larger screens */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .header-content {
+        flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+    }
+
+    nav {
+        justify-content: flex-end; /* Align navigation links to the right */
+    }
+}
